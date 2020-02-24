@@ -16,11 +16,11 @@
 
 package io.pivotal.literx;
 
-import java.util.function.Supplier;
-
 import io.pivotal.literx.domain.User;
 import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
+
+import java.util.function.Supplier;
 
 /**
  * Learn how to use StepVerifier to test Mono, Flux or any other kind of Reactive Streams Publisher.
@@ -60,7 +60,7 @@ public class Part03StepVerifier {
 				.create(flux)
 				.expectNextMatches(u -> u.getUsername().equals("swhite"))
 				.expectNextMatches(u -> u.getUsername().equals("jpinkman"))
-				.expectComplete();
+				.verifyComplete();
 	}
 
 //========================================================================================
@@ -69,7 +69,8 @@ public class Part03StepVerifier {
 	void expect10Elements(Flux<Long> flux) {
 		StepVerifier
 				.create(flux)
-				.expectNextCount(10);
+				.expectNextCount(10)
+				.verifyComplete();
 	}
 
 //========================================================================================
