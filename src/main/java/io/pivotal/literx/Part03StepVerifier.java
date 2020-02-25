@@ -38,7 +38,7 @@ public class Part03StepVerifier {
 				.create(flux)
 				.expectNext("foo")
 				.expectNext("bar")
-				.expectComplete();
+				.verifyComplete();
 	}
 
 //========================================================================================
@@ -48,7 +48,7 @@ public class Part03StepVerifier {
 		StepVerifier
 				.create(flux)
 				.expectNext("foo", "bar")
-				.expectError(RuntimeException.class);
+				.verifyError(RuntimeException.class);
 	}
 
 //========================================================================================
