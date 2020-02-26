@@ -37,7 +37,7 @@ public class Part03StepVerifierTest {
 
 	@Test
 	public void expectElementsThenComplete() {
-		workshop.expectFooBarComplete(Flux.just("foo", "bar"));
+		workshop.expectFooBarComplete(Flux.just("fooz", "barz"));
 	}
 
 //========================================================================================
